@@ -1,4 +1,4 @@
 streamlit
 pandas
 numpy
-XlsxWriter==3.2.0
+
