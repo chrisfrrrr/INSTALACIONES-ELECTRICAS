@@ -125,7 +125,7 @@ def procesar_cargas(df, factor_breaker, limite_caida):
 
 def crear_excel(df_resultado, resumen, ups_gen):
     output = BytesIO()
-    with pd.ExcelWriter(output, engine="openpyxl") as writer:
+    with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
         df_resultado.to_excel(writer, index=False, sheet_name="Cargas Calculadas")
         pd.DataFrame([resumen]).to_excel(writer, index=False, sheet_name="Resumen")
         pd.DataFrame([ups_gen]).to_excel(writer, index=False, sheet_name="UPS_Generador")
